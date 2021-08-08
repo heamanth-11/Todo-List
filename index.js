@@ -8,7 +8,7 @@ mongoose.set('useFindAndModify', false);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"))
 app.set('view engine', 'ejs');
-app.listen(port);
+app.listen(process.env.PORT || port);
 //
 // var items = ["buy food", "cook food", "eat food"];
 // let workItems = [];
