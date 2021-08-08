@@ -9,9 +9,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"))
 app.set('view engine', 'ejs');
 app.listen(process.env.PORT || port);
-//
-// var items = ["buy food", "cook food", "eat food"];
-// let workItems = [];
 mongoose.connect("mongodb+srv://admin-todo-app:viratkholi18@cluster0.6mcyw.mongodb.net/todoDB",{useNewUrlParser: true, useUnifiedTopology: true})
 const item_schema = new mongoose.Schema({
   item:String
@@ -103,9 +100,6 @@ app.post("/", function (req, res) {
     }
     
 });
-// app.get("/work", function (req, res) {
-//     res.render("list", { ListItem:"Work List", newitem: workItems });
-// });
 app.get("/about", function (req, res) {
     res.render("about");
 });
